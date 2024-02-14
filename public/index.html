@@ -17,9 +17,16 @@
             console.log('Perdimos conexion con el servidor');
         });
 
-        socket.emit('Mensaje',{nombre: 'Leonardo'})
+        
         socket.on('mensaje', function (payload) {
             console.log('Escuchando', payload);
+        })
+        socket.on('nuevo-mensaje', function (payload) {
+            console.log('Escuchando', payload);
+        })
+        socket.on('active-bands', function (bands) {
+            console.clear();
+            console.table(bands);
         })
 
     </script>
